@@ -1,0 +1,14 @@
+TentaKiller
+===========
+
+_This is a project for "mjukvaruarkitektur" (software architecture) course of
+the [SYSA14][] program. The goal is personal (groupwise) experimentation with
+with Java EE._
+
+A tool to help you study for exams.
+
+# Authors
+Hannes Landstedt a.k.a. zarac
+
+# References
+[SYSA14][http://www.ics.lu.se/utbildning/kurser/sysa14]
