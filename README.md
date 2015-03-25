@@ -11,4 +11,4 @@ A tool to help you study for exams.
 Hannes Landstedt a.k.a. zarac
 
 # References
-[SYSA14][http://www.ics.lu.se/utbildning/kurser/sysa14]
+[SYSA14]:http://www.ics.lu.se/utbildning/kurser/sysa14
