@@ -9,5 +9,6 @@ A tool to help you study for exams.
 
 # Authors
 Hannes Landstedt a.k.a. zarac
+Alexander Lexar
 
 [SYSA14]:http://www.ics.lu.se/utbildning/kurser/sysa14
