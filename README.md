@@ -11,5 +11,6 @@ A tool to help you study for exams.
 Hannes Landstedt a.k.a. zarac
 Alexander Lexar
 Max Christensen
+Jacob Hollerup a.k.a. Holleezzz
 
 [SYSA14]:http://www.ics.lu.se/utbildning/kurser/sysa14
