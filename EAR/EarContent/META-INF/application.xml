@@ -7,4 +7,7 @@
       <context-root>TentaKiller</context-root>
     </web>
   </module>
+  <module>
+    <ejb>TentaKiller-Bean.jar</ejb>
+  </module>
 </application>
