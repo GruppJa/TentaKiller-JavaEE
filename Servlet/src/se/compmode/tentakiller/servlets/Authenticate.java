@@ -36,7 +36,6 @@ public class Authenticate extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("student") != null)
             response.sendRedirect("student");
-            //request.getRequestDispatcher("/student.jsp").forward(request, response);
         else
             request.getRequestDispatcher("/authenticate.jsp").forward(request, response); }
 
