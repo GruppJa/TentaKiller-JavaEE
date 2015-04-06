@@ -36,7 +36,7 @@ public class Student extends HttpServlet {
         HttpSession session = request.getSession();
         ServletContext context = getServletContext();
         ServletConfig config = getServletConfig();
-        // String path = request.getPathInfo();
+        String path = request.getPathInfo();
 
         System.out.println("< /student");
         System.out.println("  REQUEST :");
@@ -56,24 +56,28 @@ public class Student extends HttpServlet {
         System.out.println("  ServletName " + config.getServletName());
 
         se.compmode.tentakiller.models.Student student;
-        // TODO use path instead of ?id (/student/12 instead of /student?id=12)
-        String id = (String)request.getParameter("id");
-        System.out.println("  id " + id);
-        if (id != null) { // /student?id=foo (view specific student)
-            student = students.get(id);
-            System.out.println("  student " + student);
-            if (student == null) {
-                // TODO search for id?
-                request.setAttribute("id", id);
-                request.getRequestDispatcher("/student-not-registered.jsp").forward(request, response); }
-            else {
-                request.setAttribute("student", student);
-                request.getRequestDispatcher("student-info.jsp").forward(request, response); } }
-        else { // /student (view the session/user/client or registration/login)
+        if (path == null || path.equals("/")) { // /student or /student/ -- view the session/user/client or registration/login
             if (session.getAttribute("student") == null)
-                response.sendRedirect("authenticate");
-            else // TODO would be nice to tell client to load /student .. (Perhaps through <meta refresh..>
-                request.getRequestDispatcher("/student.jsp").forward(request, response); } }
+                response.sendRedirect(context.getContextPath() + "/authenticate");
+            else
+                request.getRequestDispatcher("/student.jsp").forward(request, response); }
+        else { // supplied id. e.g. /student/99
+            String str = path.substring(1);
+            try {
+                long id = Long.parseLong(str);
+                System.out.println("  id " + id);
+                student = students.get(id);
+                System.out.println("  student " + student);
+                if (student == null) {
+                    // TODO search for id?
+                    request.setAttribute("id", id);
+                    request.getRequestDispatcher("/student-not-registered.jsp").forward(request, response); }
+                else {
+                    request.setAttribute("student", student);
+                    request.getRequestDispatcher("student-info.jsp").forward(request, response); } }
+            catch (Exception e) {
+                request.setAttribute("id", str);
+                request.getRequestDispatcher("/student-not-registered.jsp").forward(request, response); } } }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

@@ -9,7 +9,7 @@ import se.compmode.tentakiller.models.Student;
 @Local
 public interface StudentsLocal {
     public String testicle();
-    public Student get(String id);
+    public Student get(long id);
     public void add(Student student);
     public Student createStudent(String email, String name, String password);
     public List<Student> findByName(String name);

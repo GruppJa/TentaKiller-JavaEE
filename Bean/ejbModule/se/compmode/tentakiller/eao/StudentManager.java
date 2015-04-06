@@ -17,7 +17,7 @@ public class StudentManager implements StudentManagerLocal {
     @PersistenceContext(unitName="TentaKiller")
     private EntityManager entities;
 
-    public Student get(String id) {
+    public Student get(long id) {
         return entities.find(Student.class, id); }
 
     @Override
