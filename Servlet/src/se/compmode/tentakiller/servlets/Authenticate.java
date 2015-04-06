@@ -16,7 +16,7 @@ import se.compmode.tentakiller.facade.StudentsLocal;
 /**
  * Servlet implementation class Login
  */
-@WebServlet("/authenticate")
+@WebServlet("/authenticate/*")
 public class Authenticate extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
