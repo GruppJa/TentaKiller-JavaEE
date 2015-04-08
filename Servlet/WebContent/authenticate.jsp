@@ -4,15 +4,14 @@
 <html>
   <head>
     <meta content="UTF-8">
-
-    <title>Student - Registration / Login</title>
-
+    <title>Student - Registration / Login</title>    
+    <link rel="stylesheet" type="text/css" href="css/main.css"></link>
     <script type="application/javascript" src="js/registration.js"></script>
   </head>
 
-  <body>
+  <body id="main">
     <header>
-      Hello, whoever you are..
+      <p>Hello and welcome to TentaKillers student Registration / Login page.</p>
     </header>
 
     <%
@@ -21,14 +20,19 @@
       if (error != null) {
           out.println(error); }
     %>
-
-    <form name="authenticate" action="authenticate" method="POST">
-      <input type="text" name="email" placeholder="E-Mail"<% if (request.getAttribute("email") != null) { out.println(" value=\"" + request.getAttribute("email") + "\""); } %>/>
-      <input type="text" name="name" placeholder="Name"<% if (request.getAttribute("name") != null) { out.println(" value=\"" + request.getAttribute("name") + "\""); } %>/>
-      <input type="password" name="password" placeholder="Password"<% if (request.getAttribute("password") != null) { out.println(" value=\"" + request.getAttribute("password") + "\""); } %>/>
-      <br/>
-      <input type="submit" name="login" value="Login"/>
-      <input type="submit" name="register" value="Register"/>
-    </form>
+	<div id="section">
+	    <form name="authenticate" action="authenticate" method="POST">
+	      <input id="inputFeild" type="text" name="email" placeholder="E-Mail"<% if (request.getAttribute("email") != null) { out.println(" value=\"" + request.getAttribute("email") + "\""); } %>/>
+	      </br>
+	      <input id="inputFeild" type="password" name="password" placeholder="Password"<% if (request.getAttribute("password") != null) { out.println(" value=\"" + request.getAttribute("password") + "\""); } %>/>
+	      <br/>
+     	  <input id="inputBox" type="submit" name="login" value="Login"/>
+     	  </br>
+     	  <input id="inputFeild" type="text" name="name" placeholder="Name"<% if (request.getAttribute("name") != null) { out.println(" value=\"" + request.getAttribute("name") + "\""); } %>/>
+	      </br>
+      	  <input id="inputBox" type="submit" name="register" value="Register"/>
+      	  </br>
+	    </form>
+	</div>
   </body>
 </html>

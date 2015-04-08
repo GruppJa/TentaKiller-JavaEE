@@ -14,7 +14,7 @@ Student student = (Student)request.getAttribute("student");
 <html>
   <head>
     <meta charset="UTF-8">
-
+	<link rel="stylesheet" type="text/css" href="css/main.css"></link>
     <title><%= student.getName() %> (Student)</title>
   </head>
 
@@ -22,16 +22,14 @@ Student student = (Student)request.getAttribute("student");
     <header>
       Student information
     </header>
-
-    <dl>
-      <dt>Id</dt>
-      <dd><%= student.getId() %></dd>
+      <dl id="section">
+	  <input id="inputFeild" type="text" name="country" value="student.getId()" readonly><br>
 
       <dt>E-Mail</dt>
-      <dd><%= student.getEmail() %></dd>
+      <input id="inputFeild" type="text" name="country" value="student.getEmail()" readonly><br>
 
       <dt>Name</dt>
-      <dd><%= student.getName() %></dd>
+      <input id="inputFeild" type="text" name="country" value="student.getName()" readonly><br>
     </dl>
   </body>
 </html>

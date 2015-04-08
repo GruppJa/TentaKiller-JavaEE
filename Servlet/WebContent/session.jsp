@@ -4,6 +4,7 @@
 <html>
   <head>
     <meta content="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css"></link>
     <title>Session information</title>
   </head>
 
