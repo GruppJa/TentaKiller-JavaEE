@@ -2,15 +2,13 @@ package se.compmode.tentakiller.models;
 
 import java.util.Date;
 import java.util.Calendar;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,10 +18,9 @@ import javax.persistence.TemporalType;
     @NamedQuery(name="Student.findByName", query="SELECT s FROM Student s WHERE s.name LIKE :name"),
     @NamedQuery(name="Student.findByEmail", query="SELECT s FROM Student s WHERE s.email LIKE :email"),
 })
-@SequenceGenerator(name="ID_SEQUENCE", allocationSize=1)
 @Table(name="Students")
 public class Student {
-    private long id;
+    private String id;
     private String name;
     private String password;
     private String email;
@@ -31,6 +28,7 @@ public class Student {
     private Date created;
 
     public Student() {
+        id = UUID.randomUUID().toString();
         created = Calendar.getInstance().getTime(); }
 
     @Column(name="Email", nullable=false, unique=true)
@@ -41,12 +39,11 @@ public class Student {
         this.email = email; }
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="Id")
-    public long getId() {
+    public String getId() {
         return id; }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id; }
 
     @Column(name="Name")
