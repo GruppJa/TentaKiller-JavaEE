@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <jsp:include page="bar.jsp"/>
+    <jsp:include page="header.jsp"/>
 
     <article class="student">
       <header class="name">
@@ -30,5 +30,7 @@
         <%= student.getEmail() %>
       </a>
     </article>
+
+    <jsp:include page="footer.jsp"/>
   </body>
 </html>

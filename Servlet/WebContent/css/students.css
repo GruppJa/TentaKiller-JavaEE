@@ -1,14 +1,16 @@
+section.student {
+  text-align: center; }
+
 article.student {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 0.5em;
-  float: left;
+  display: inline-block;
   margin: 0.2em;
   padding: 0.2em;
   width: 18em; }
 
 article.student > header {
   font-size: 2rem; }
-
 
 article.student > h2 {
   font-size: 0.8rem;

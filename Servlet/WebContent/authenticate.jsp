@@ -10,15 +10,14 @@
   </head>
 
   <body id="main">
-    <jsp:include page="bar.jsp"/>
+    <jsp:include page="header.jsp"/>
 
     <header>
-      <p>Hello and welcome to TentaKillers student Registration / Login page.</p>
+      <p>Hello and Welcome to TentaKiller Student Registration / Login page.</p>
     </header>
 
     <%
       String error = (String)request.getAttribute("error");
-      out.println("got error?");
       if (error != null) {
           out.println(error); }
     %>
@@ -36,5 +35,7 @@
       	  </br>
 	    </form>
 	</div>
+
+    <jsp:include page="footer.jsp"/>
   </body>
 </html>

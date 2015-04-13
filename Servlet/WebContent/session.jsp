@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <jsp:include page="bar.jsp"/>
+    <jsp:include page="header.jsp"/>
 
     <header>
         <h1>Session information</h1>
@@ -20,5 +20,7 @@
 
     <h2>Creation time</h2>
     <%= session.getCreationTime() %>
+
+    <jsp:include page="footer.jsp"/>
   </body>
 </html>

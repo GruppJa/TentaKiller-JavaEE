@@ -19,7 +19,7 @@ Student student = (Student)session.getAttribute("student");
   </head>
 
   <body>
-    <jsp:include page="bar.jsp"/>
+    <jsp:include page="header.jsp"/>
 
     <header>
       Hello <%= student.getName() %>! : )
@@ -50,5 +50,7 @@ Student student = (Student)session.getAttribute("student");
     <form action="authenticate" method="POST">
         <input type="submit" name="logout" value="Log out"/>
     </form>
+
+    <jsp:include page="footer.jsp"/>
   </body>
 </html>
