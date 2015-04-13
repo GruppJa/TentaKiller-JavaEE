@@ -3,19 +3,19 @@
 <aside class="bar">
   <nav>
     <a class="home" href="<%= getServletContext().getContextPath() %>">
-      <img src="img/TentaKiller.png" alt="TentaKiller logo" title="TentaKiller logo"/>
+      <img src="<%= getServletContext().getContextPath() %>/img/TentaKiller.png" alt="TentaKiller logo" title="TentaKiller logo"/>
     </a>
 
     <a class="challenges" href="<%= getServletContext().getContextPath() %>/challenges">
-      <img src="img/puzzleIcon.png" alt="Challenge icon" title="Challenge icon"/>
+      <img src="<%= getServletContext().getContextPath() %>/img/puzzleIcon.png" alt="Challenge icon" title="Challenge icon"/>
     </a>
 
     <a class="exams" href="<%= getServletContext().getContextPath() %>/exams">
-      <img src="img/penIcon.png" alt="Exam icon" title="Exam icon"/>
+      <img src="<%= getServletContext().getContextPath() %>/img/penIcon.png" alt="Exam icon" title="Exam icon"/>
     </a>
 
     <a class="students" href="<%= getServletContext().getContextPath() %>/students">
-      <img src="img/studentIcon.png" alt="Student icon" title="Student icon"/>
+      <img src="<%= getServletContext().getContextPath() %>/img/studentIcon.png" alt="Student icon" title="Student icon"/>
     </a>
   </nav>
 
