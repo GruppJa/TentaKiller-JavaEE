@@ -17,7 +17,7 @@ public class StudentManager implements StudentManagerLocal {
     @PersistenceContext(unitName="TentaKiller")
     private EntityManager entities;
 
-    public Student get(long id) {
+    public Student get(String id) {
         return entities.find(Student.class, id); }
 
     @Override
@@ -34,4 +34,9 @@ public class StudentManager implements StudentManagerLocal {
     public List<Student> findByName(String name) {
         TypedQuery<Student> query = entities.createNamedQuery("Student.findByName", Student.class);
         query.setParameter("name", name);
+        return query.getResultList(); }
+
+    @Override
+    public List<Student> getAll() {
+        TypedQuery<Student> query = entities.createNamedQuery("Student.getAll", Student.class);
         return query.getResultList(); } }

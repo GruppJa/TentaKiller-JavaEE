@@ -37,7 +37,7 @@ public class Authenticate extends HttpServlet {
         if (request.getSession().getAttribute("student") != null)
             response.sendRedirect("student");
         else
-            request.getRequestDispatcher("/authenticate.jsp").forward(request, response); }
+            request.getRequestDispatcher("authenticate.jsp").forward(request, response); }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

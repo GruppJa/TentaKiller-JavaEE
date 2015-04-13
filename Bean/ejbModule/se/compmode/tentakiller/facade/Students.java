@@ -24,7 +24,7 @@ public class Students implements StudentsLocal {
         System.out.println("NOT IMPLEMENTED facade.Student.find(String name)");
         return null; }*/
 
-    public Student get(long id) {
+    public Student get(String id) {
         System.out.println("Students.get(id) students : " + students);
         return students.get(id); }
 
@@ -55,4 +55,8 @@ public class Students implements StudentsLocal {
 
     @Override
     public List<Student> getByName(String name) {
-        return students.findByName(name); } }
+        return students.findByName(name); }
+
+    @Override
+    public List<Student> getAll() {
+        return students.getAll(); } }

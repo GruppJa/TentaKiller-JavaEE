@@ -9,6 +9,8 @@
   </head>
 
   <body>
+    <jsp:include page="bar.jsp"/>
+
     <header>
       No student with that id (<%= request.getAttribute("id") %>) is registered.
     </header>

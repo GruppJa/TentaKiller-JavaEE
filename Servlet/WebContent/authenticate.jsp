@@ -10,6 +10,8 @@
   </head>
 
   <body id="main">
+    <jsp:include page="bar.jsp"/>
+
     <header>
       <p>Hello and welcome to TentaKillers student Registration / Login page.</p>
     </header>

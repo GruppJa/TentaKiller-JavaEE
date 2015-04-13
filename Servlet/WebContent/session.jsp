@@ -9,6 +9,8 @@
   </head>
 
   <body>
+    <jsp:include page="bar.jsp"/>
+
     <header>
         <h1>Session information</h1>
     </header>

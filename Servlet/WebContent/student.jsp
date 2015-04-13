@@ -19,6 +19,8 @@ Student student = (Student)session.getAttribute("student");
   </head>
 
   <body>
+    <jsp:include page="bar.jsp"/>
+
     <header>
       Hello <%= student.getName() %>! : )
     </header>

@@ -15,6 +15,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @NamedQueries({
+    @NamedQuery(name="Student.getAll", query="SELECT s FROM Student s"),
     @NamedQuery(name="Student.findByName", query="SELECT s FROM Student s WHERE s.name LIKE :name"),
     @NamedQuery(name="Student.findByEmail", query="SELECT s FROM Student s WHERE s.email LIKE :email"),
 })

@@ -1,4 +1,6 @@
 body {
+  font-family: Verdana;
+  margin: 0;
   text-align: center; }
 
 body > menu {
@@ -10,10 +12,53 @@ body > menu > a {
   text-decoration: none;
   color: black; }
 
+a {
+  text-decoration: none;
+  color: blueviolet; }
+
 header {
   border-style: solid;
   border-width: 0px;
   text-align: center; }
+
+dt {
+  clear: left;
+  float: left; }
+
+dd {
+  float: right; }
+
+.bar {
+  background-color: rgba(240, 248, 255, 0.8);
+  margin: 0;
+  padding: 0.2em; }
+
+.bar nav {
+  float: left; }
+
+.bar nav .home,
+.bar nav .challenges,
+.bar nav .exams,
+.bar nav .students {
+  display: inline-block;
+  vertical-align: middle; }
+
+.bar nav .home img {
+  height: 3em; }
+
+.bar nav .challenges img,
+.bar nav .exams img,
+.bar nav .students img {
+  height: 2em; }
+
+.bar section.user {
+  float: right; }
+
+.bar hr.clear {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  border: 0; }
 
 #section {
   border-width: 0px;

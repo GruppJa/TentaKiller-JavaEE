@@ -1,0 +1,21 @@
+article.student {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 0.5em;
+  float: left;
+  margin: 0.2em;
+  padding: 0.2em;
+  width: 18em; }
+
+article.student > header {
+  font-size: 2rem; }
+
+
+article.student > h2 {
+  font-size: 0.8rem;
+  float: left;
+  clear: left;
+  margin: 0;
+  padding: 0.1em; }
+
+article.student span {
+  vertical-align: middle; }

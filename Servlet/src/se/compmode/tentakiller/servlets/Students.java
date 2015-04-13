@@ -1,6 +1,7 @@
 package se.compmode.tentakiller.servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletConfig;
@@ -17,8 +18,8 @@ import se.compmode.tentakiller.facade.StudentsLocal;
 /**
  * Servlet implementation class Student
  */
-@WebServlet("/student/*")
-public class Student extends HttpServlet {
+@WebServlet("/students")
+public class Students extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @EJB
@@ -27,7 +28,7 @@ public class Student extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Student() { super(); }
+    public Students() { super(); }
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -55,28 +56,6 @@ public class Student extends HttpServlet {
         System.out.println("  CONFIG :");
         System.out.println("  ServletName " + config.getServletName());
 
-        se.compmode.tentakiller.models.Student student;
-        if (path == null || path.equals("/")) { // /student or /student/ -- view the session/user/client or registration/login
-            if (session.getAttribute("student") == null)
-                response.sendRedirect(context.getContextPath() + "/authenticate");
-            else
-                request.getRequestDispatcher("/student.jsp").forward(request, response); }
-        else { // supplied id. e.g. /student/99
-            String id = path.substring(1);
-            System.out.println("  id " + id);
-            student = students.get(id);
-            System.out.println("  student " + student);
-            if (student == null) {
-                // TODO search for id?
-                request.setAttribute("id", id);
-                request.getRequestDispatcher("/student-not-registered.jsp").forward(request, response); }
-            else {
-                request.setAttribute("student", student);
-                request.getRequestDispatcher("/student-info.jsp").forward(request, response); } } }
-
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO perhaps student registration should go here rather than authenticate ?
-        response.getWriter().println("student login/registration not implemented. try /authenticate to register."); } }
+        List<se.compmode.tentakiller.models.Student> all = students.getAll();
+        request.setAttribute("students", all);
+        request.getRequestDispatcher("students.jsp").forward(request, response); } }
