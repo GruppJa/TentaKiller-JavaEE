@@ -2,15 +2,6 @@ body {
   font-family: Verdana;
   margin: 0; }
 
-body > menu {
-  margin: 0;
-  padding: 0.5em; }
-
-body > menu > a {
-  display: inline-block;
-  text-decoration: none;
-  color: black; }
-
 a {
   text-decoration: none;
   color: blueviolet; }
