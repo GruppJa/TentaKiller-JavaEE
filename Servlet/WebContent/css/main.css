@@ -67,14 +67,21 @@ body > footer {
   padding-top: 0.2em;
   text-align: center; }
 
-#section {
-  border-width: 0px;
+section.authenticate {
   text-align: center; }
 
-#inputFeild {
-  width: 200px;
-  margin: 10px; }
+section.authenticate .error {
+  color: red; }
 
-#inputBox {
-  width: 70px;
-  margin: 10px; }
+form[name="authenticate"] {
+  text-align: center; }
+
+form[name="authenticate"] input[type="password"],
+form[name="authenticate"] input[type="text"] {
+  margin: 0.2em;
+  text-align: center;
+  width: 20em; }
+
+form[name="authenticate"] input[type="submit"] {
+  width: 8em;
+  margin: 0.2em; }

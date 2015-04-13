@@ -9,32 +9,38 @@
     <script type="application/javascript" src="js/registration.js"></script>
   </head>
 
-  <body id="main">
+  <body>
     <jsp:include page="header.jsp"/>
 
-    <header>
-      <p>Hello and Welcome to TentaKiller Student Registration / Login page.</p>
-    </header>
+    <section class="authenticate">
+      <header>
+        <p>Hello and Welcome to TentaKiller Student Registration / Login page.</p>
+      </header>
 
-    <%
-      String error = (String)request.getAttribute("error");
-      if (error != null) {
-          out.println(error); }
-    %>
-	<div id="section">
-	    <form name="authenticate" action="authenticate" method="POST">
-	      <input id="inputFeild" type="text" name="email" placeholder="E-Mail"<% if (request.getAttribute("email") != null) { out.println(" value=\"" + request.getAttribute("email") + "\""); } %>/>
-	      </br>
-	      <input id="inputFeild" type="password" name="password" placeholder="Password"<% if (request.getAttribute("password") != null) { out.println(" value=\"" + request.getAttribute("password") + "\""); } %>/>
-	      <br/>
-     	  <input id="inputBox" type="submit" name="login" value="Login"/>
-     	  </br>
-     	  <input id="inputFeild" type="text" name="name" placeholder="Name"<% if (request.getAttribute("name") != null) { out.println(" value=\"" + request.getAttribute("name") + "\""); } %>/>
-	      </br>
-      	  <input id="inputBox" type="submit" name="register" value="Register"/>
-      	  </br>
-	    </form>
-	</div>
+      <span class="error">
+        <%
+          String error = (String)request.getAttribute("error");
+          if (error != null) { out.println(error); }
+        %>
+      </span>
+
+      <form name="authenticate" action="authenticate" method="POST">
+        <input type="text" name="email" placeholder="E-Mail"<% if (request.getAttribute("email") != null) { out.println(" value=\"" + request.getAttribute("email") + "\""); } %>/>
+        </br>
+
+        <input type="password" name="password" placeholder="Password"<% if (request.getAttribute("password") != null) { out.println(" value=\"" + request.getAttribute("password") + "\""); } %>/>
+        <br/>
+
+        <input type="submit" name="login" value="Login"/>
+        </br>
+
+        <input type="text" name="name" placeholder="Name"<% if (request.getAttribute("name") != null) { out.println(" value=\"" + request.getAttribute("name") + "\""); } %>/>
+        </br>
+
+        <input type="submit" name="register" value="Register"/>
+        </br>
+      </form>
+    </section>
 
     <jsp:include page="footer.jsp"/>
   </body>
