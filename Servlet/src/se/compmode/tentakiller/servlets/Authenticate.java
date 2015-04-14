@@ -67,7 +67,7 @@ public class Authenticate extends HttpServlet {
             //request.getRequestDispatcher("authenticate.jsp").forward(request, response);
             response.sendRedirect("student");
         }
-        else if (request.getParameter("register") != null) {
+        else if (request.getParameter("register") != null) { // TODO Should perhaps be part of the Student servlet rather than Authenticate.
             String email = (String)request.getParameter("email");
             String name = (String)request.getParameter("name");
             String password = (String)request.getParameter("password");
