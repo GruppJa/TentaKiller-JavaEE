@@ -31,17 +31,7 @@
             </a>
           </header>
 
-          <h2>Id</h2>
-          <span class="id">
-            <c:out value="${student.getId()}"/>
-          </span>
-
-          <h2>E-Mail</h2>
-          <span class="email">
-            <a href="mailto:<c:out value="${student.getEmail()}"/>">
-              <c:out value="${student.getEmail()}"/>
-            </a>
-          </span> 
+          <c:out value="${student.getTrials().size()}"/> trials
         </article>
       </c:forEach>
     </section>
