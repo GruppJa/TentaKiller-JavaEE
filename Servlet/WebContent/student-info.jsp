@@ -19,12 +19,11 @@
 
     <article class="student">
       <header class="name">
-        <a href="<c:out value="${student.getId()}"/>">
+        <a href="<%= student.getId() %>">
           <%= student.getName() %>
         </a>
       </header>
 
-      <h2>E-Mail</h2>
       <a class="email" href="mailto:<%= student.getEmail() %>">
         <%= student.getEmail() %>
       </a>
@@ -35,7 +34,7 @@
         <c:forEach var="trial" items="${student.getTrials()}">
           <article class="trial">
             <header>
-              <a href="../trial/<c:out value="${trial.getId()}"/>">
+              <a href="../exam/<c:out value="${trial.getExam().getId()}"/>">
                 <span class="exam name">
                   <c:out value="${trial.getExam().getName()}"/>
                 </span>
@@ -61,6 +60,13 @@
               <dt>Exam Creator</dt>
               <dd>
                 <c:out value="${trial.getExam().getCreator().getName()}"/>
+              </dd>
+
+              <dt>Id</dt>
+              <dd>
+                <a href="../trial/<c:out value="${trial.getId()}"/>">
+                  <c:out value="${trial.getId()}"/>
+                </a>
               </dd>
             </dl>
           </article>

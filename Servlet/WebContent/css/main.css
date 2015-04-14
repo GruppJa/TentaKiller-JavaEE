@@ -11,18 +11,26 @@ a {
 header {
   border-style: solid;
   border-width: 0px;
-  text-align: center; }
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.2em; }
 
 dt {
   clear: left;
   float: left;
-  font-size: 0.8rem; }
+  font-size: 0.8rem;
+  font-weight: bold; }
 
 dd {
   float: right; }
 
+article {
+  text-align: center;
+  margin: 1em; }
+
 section {
-  text-align: center; }
+  text-align: center;
+  margin: 0.5em; }
 
 section > header {
   font-size: 2rem; }
@@ -34,9 +42,6 @@ section > article {
   margin: 0.2em;
   padding: 0.5em;
   width: 18em; }
-
-section > article > header {
-  font-size: 2rem; }
 
 section > article > h2 {
   font-size: 0.8rem;
@@ -88,8 +93,8 @@ body > footer {
   color: white;
   background-color: black;
   clear: left;
-  margin-top: 1em;
-  padding-top: 0.2em;
+  margin: 1em 0;
+  padding: 1em;
   text-align: center; }
 
 /** Authentication **/
