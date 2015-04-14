@@ -1,10 +1,12 @@
+/** General styling **/
 body {
   font-family: Verdana;
-  margin: 0; }
+  margin: 0;
+  zoom: 0.8; }
 
 a {
   text-decoration: none;
-  color: blueviolet; }
+  color: chocolate; }
 
 header {
   border-style: solid;
@@ -13,13 +15,43 @@ header {
 
 dt {
   clear: left;
-  float: left; }
+  float: left;
+  font-size: 0.8rem; }
 
 dd {
   float: right; }
 
+section {
+  text-align: center; }
+
+section > header {
+  font-size: 2rem; }
+
+section > article {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 0.2em;
+  display: inline-block;
+  margin: 0.2em;
+  padding: 0.5em;
+  width: 18em; }
+
+section > article > header {
+  font-size: 2rem; }
+
+section > article > h2 {
+  font-size: 0.8rem;
+  float: left;
+  clear: left;
+  margin: 0;
+  padding: 0.1em; }
+
+section > article span {
+  vertical-align: middle; }
+
+/** Bar / Header / Navigation / whatever.. **/
 .bar {
-  background-color: rgba(240, 248, 255, 0.8);
+  color: white;
+  background-color: black;
   margin: 0;
   padding: 0.2em;
   margin-bottom: 1em; }
@@ -51,13 +83,16 @@ dd {
   padding: 0;
   border: 0; }
 
+/** Footer / About / Meta **/
 body > footer {
-  background-color: aliceblue;
+  color: white;
+  background-color: black;
   clear: left;
   margin-top: 1em;
   padding-top: 0.2em;
   text-align: center; }
 
+/** Authentication **/
 section.authenticate {
   text-align: center; }
 

@@ -13,7 +13,6 @@
     <title>TentaKiller Students</title>
 
     <link rel="stylesheet" type="text/css" href="css/main.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/students.css"></link>
   </head>
 
   <body>
