@@ -12,10 +12,13 @@ body > menu > a {
   text-decoration: none; }
 
 body > menu > a .label {
-  display: block;
+  display: block; }
 
 body > menu > a:hover .label {
   color: tomato; }
+
+menu > a > img {
+  height: 5em; }
 
 img.logo {
   height: 27em; }
