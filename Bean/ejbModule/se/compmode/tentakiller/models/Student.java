@@ -2,13 +2,16 @@ package se.compmode.tentakiller.models;
 
 import java.util.Date;
 import java.util.Calendar;
+import java.util.Set;
 import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,6 +30,8 @@ public class Student {
     private String email;
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
+    private Set<Trial> trials;
+    private Set<Exam> exams;
 
     public Student() {
         id = UUID.randomUUID().toString();
@@ -66,4 +71,18 @@ public class Student {
         return created; }
 
     public void setCreated(Date created) {
-        this.created = created; } }
+        this.created = created; }
+
+    @OneToMany(mappedBy="creator", fetch = FetchType.EAGER)
+    public Set<Exam> getExams() {
+        return exams; }
+
+    public void setExams(Set<Exam> exams) {
+        this.exams = exams; }
+
+    @OneToMany(mappedBy="student", fetch = FetchType.EAGER)
+    public Set<Trial> getTrials() {
+        return trials; }
+
+    public void setTrials(Set<Trial> trials) {
+        this.trials = trials; } }

@@ -2,6 +2,7 @@ package se.compmode.tentakiller.eao;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,6 +14,7 @@ import se.compmode.tentakiller.models.Student;
  * Session Bean implementation class StudentManager
  */
 @Stateless
+@LocalBean
 public class StudentManager implements StudentManagerLocal {
     @PersistenceContext(unitName="TentaKiller")
     private EntityManager entities;
