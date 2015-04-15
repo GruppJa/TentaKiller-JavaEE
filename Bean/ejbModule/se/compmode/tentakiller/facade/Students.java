@@ -17,9 +17,6 @@ public class Students implements StudentsLocal {
     @EJB
     private StudentManagerLocal students;
 
-    public String testicle() {
-        return "you are a testicle"; }
-
     /*public Student findByName(String name) {
         System.out.println("NOT IMPLEMENTED facade.Student.find(String name)");
         return null; }*/
