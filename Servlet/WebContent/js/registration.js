@@ -3,23 +3,27 @@ var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
 var registration = {
   createStyleValidator : function(field) {
     return function() {
-      if (registration.validators[field](this.value)) {
+      var valid = registration.validators[field](this.value)
+      if (valid) {
         this.classList.add('valid')
         this.classList.remove('invalid') }
       else {
         this.classList.add('invalid')
-        this.classList.remove('valid') } } },
+        this.classList.remove('valid') }
+      return valid } },
+
   validators : {
     email : function(value) {
       // thanks http://www.regular-expressions.info/email.html
       return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) },
+
     name : function(value) {
       return /^[A-Z0-9._%+-]+$/i.test(value) },
+
     password : function(value) {
       return (value.length > 0 && value.length < 256) } } }
 
 document.addEventListener('readystatechange', function(ev) {
-  console.log('ready state changed', document.readyState, ev, this)
   if (document.readyState === 'interactive') {
     registration.form = document.querySelector('form[name="authenticate"]');
     registration.emailInput = registration.form.querySelector('input[name="email"]')
@@ -28,15 +32,30 @@ document.addEventListener('readystatechange', function(ev) {
     registration.loginInput = registration.form.querySelector('input[name="login"]')
     registration.registerInput = registration.form.querySelector('input[name="register"]')
 
-    registration.emailInput.addEventListener('input', registration.createStyleValidator('email'))
-    registration.nameInput.addEventListener('input', registration.createStyleValidator('name'))
-    registration.passwordInput.addEventListener('input', registration.createStyleValidator('password'))
+    var validateAndStyleEmail = registration.createStyleValidator('email')
+    var validateAndStyleName = registration.createStyleValidator('name')
+    var validateAndStylePassword = registration.createStyleValidator('password')
 
-    /* registration.registerInput.addEventListener('click', function() {
-      // TODO registration.validate()
-      // registration.register(registration.loginInput.value, registration.passwordInput.value)
-      console.log('register..', this, event) })
+    registration.emailInput.addEventListener('input', validateAndStyleEmail)
+    registration.nameInput.addEventListener('input', validateAndStyleName)
+    registration.passwordInput.addEventListener('input', validateAndStylePassword)
 
-    registration.loginInput.addEventListener('click', function() {
-      registration.form.action = 'login'
-      console.log('login..', this, event) }) */ } } )
+    registration.registerInput.addEventListener('click', function(e) {
+      var valid = true
+      if (!validateAndStyleEmail.call(registration.emailInput, e)) valid = false
+      if (!validateAndStyleName.call(registration.nameInput, e)) valid = false
+      if (!validateAndStylePassword.call(registration.passwordInput, e)) valid = false
+      if (!valid) {
+        e.stopPropagation()
+        e.preventDefault() } })
+
+    registration.loginInput.addEventListener('click', function(e) {
+      console.log('should we send login?')
+      var valid = true
+      if (!validateAndStyleEmail.call(registration.emailInput, e)) valid = false
+      if (!validateAndStylePassword.call(registration.passwordInput, e)) valid = false
+      console.log('valid is', valid)
+      if (!valid) {
+        console.log('no!')
+        e.stopPropagation()
+        e.preventDefault() } }) } } )
