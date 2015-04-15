@@ -14,7 +14,7 @@
 
     <section class="authenticate">
       <header>
-        <p>Hello and Welcome to TentaKiller Student Registration / Login page.</p>
+        Log in / Register
       </header>
 
       <span class="error">
@@ -31,7 +31,7 @@
         <input type="password" name="password" placeholder="Password"<% if (request.getAttribute("password") != null) { out.println(" value=\"" + request.getAttribute("password") + "\""); } %>/>
         <br/>
 
-        <input type="submit" name="login" value="Login"/>
+        <input type="submit" name="login" value="Log in"/>
         </br>
 
         <input type="text" name="name" placeholder="Name"<% if (request.getAttribute("name") != null) { out.println(" value=\"" + request.getAttribute("name") + "\""); } %>/>

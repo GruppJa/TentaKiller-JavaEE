@@ -53,6 +53,12 @@ section > article > h2 {
 section > article span {
   vertical-align: middle; }
 
+.valid {
+  background-color: rgba(0, 255, 0, 0.5); }
+
+.invalid {
+  background-color: rgba(255, 0, 0, 0.5); }
+
 /** Bar / Header / Navigation / whatever.. **/
 .bar {
   color: white;
