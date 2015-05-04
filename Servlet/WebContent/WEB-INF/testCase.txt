@@ -1,0 +1,2 @@
+se.compmode.tentakiller.tests.FacadeTest
+se.compmode.tentakiller.tests.StudentTest
