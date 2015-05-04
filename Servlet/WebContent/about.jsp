@@ -33,7 +33,7 @@
 
 	<section>
 	  <header>Källan till mästrarnas värk</header>
-	  <a href="http://github.com/GruppJa/TentaKiller-JavaEE">TentaKiller-JavaEE source @ GitHub</a>
+	  <a href="http://github.com/GruppJa/TentaKiller-JavaEE" target="_blank">TentaKiller-JavaEE source @ GitHub</a>
     </section>
 
     <jsp:include page="footer.jsp"/>
